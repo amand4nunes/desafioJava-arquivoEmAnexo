@@ -1,4 +1,7 @@
 import java.io.File;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,15 +22,19 @@ public class Main {
             jogo.add(novoJogo);
 
             //armazerar nome do jogo no arquivo
-            if (novoJogo.getGlobal_Sales() > 2000000 && novoJogo.getYear() > 2000) {
+            if (novoJogo.getGlobal_Sales() > 2.0 && novoJogo.getYear() > 2000) {
                 regra.escreverArquivo(novoJogo.getName());
             }
         }
         scanner.close();
-
         double media = calc.calcularMedia(jogo);
         double desvio = calc.calcularDesvio(media, jogo);
-        System.out.println("A Média de jogos vendidos é:" + media + " e o desvio padrão é de " + desvio);
 
+
+        String valorMedio = new DecimalFormat("#.##").format(media);
+        String valorDescio = new DecimalFormat("#.##").format(desvio);
+
+
+        System.out.println("Média: " + valorMedio + " Desvio padrão: " + valorDescio);
     }
 }

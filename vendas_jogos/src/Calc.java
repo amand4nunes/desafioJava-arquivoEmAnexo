@@ -7,13 +7,10 @@ public class Calc {
         for (InformacoesDosJogos s : jogos) {
             total += s.getGlobal_Sales();
         }
-        double media = total / jogos.size();
+        double media = (total / jogos.size());
         return media;
     }
-    public static double converterNumero(double valor){
-        double valorMilhao = valor * 1000000;
-        return valorMilhao;
-    }
+
 
     public static double calcularDesvio(double media, ArrayList<InformacoesDosJogos> jogos) {
         double desvio = 0;
@@ -24,8 +21,11 @@ public class Calc {
             dp = (jogos.get(i).getGlobal_Sales() - media) * (jogos.get(i).getGlobal_Sales() - media);
             dp2 += dp;
         }
+
         dp3 = dp2 / jogos.size();
         desvio = Math.sqrt(dp3);
+        System.out.println(media);
+        System.out.println();
         return desvio;
     }
 }

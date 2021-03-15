@@ -1,4 +1,5 @@
 import java.io.*;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -39,11 +40,11 @@ public class RegraArquivo {
             year = Integer.parseInt(colunas[3]);
             genre = colunas[4];
             publisher = colunas[5];
-            na_sales = calc.converterNumero(Double.parseDouble(colunas[6]));
-            eu_sales = calc.converterNumero(Double.parseDouble(colunas[7]));
-            jp_sales = calc.converterNumero(Double.parseDouble(colunas[8]));
-            other_sales = calc.converterNumero(Double.parseDouble(colunas[9]));
-            global_sales = calc.converterNumero(Double.parseDouble(colunas[10]));
+            na_sales = Double.parseDouble(colunas[6]);
+            eu_sales = Double.parseDouble(colunas[7]);
+            jp_sales = Double.parseDouble(colunas[8]);
+            other_sales = Double.parseDouble(colunas[9]);
+            global_sales = Double.parseDouble(colunas[10]);
             scanner.nextLine();
         } else if (colunas.length == 12) {
             if (colunas[1].charAt(0) == '"') {
@@ -52,11 +53,11 @@ public class RegraArquivo {
                 year = Integer.parseInt(colunas[4]);
                 genre = colunas[5];
                 publisher = colunas[6];
-                na_sales = calc.converterNumero(Double.parseDouble(colunas[7]));
-                eu_sales = calc.converterNumero(Double.parseDouble(colunas[8]));
-                jp_sales = calc.converterNumero(Double.parseDouble(colunas[9]));
-                other_sales = calc.converterNumero(Double.parseDouble(colunas[10]));
-                global_sales = calc.converterNumero(Double.parseDouble(colunas[11]));
+                na_sales = Double.parseDouble(colunas[7]);
+                eu_sales = Double.parseDouble(colunas[8]);
+                jp_sales = Double.parseDouble(colunas[9]);
+                other_sales = Double.parseDouble(colunas[10]);
+                global_sales = Double.parseDouble(colunas[11]);
 
             } else {
                 if (colunas[5].charAt(0) == '"') {
@@ -66,11 +67,11 @@ public class RegraArquivo {
                     year = Integer.parseInt(colunas[3]);
                     genre = colunas[4];
                     publisher = colunas[5] + " ," + colunas[6];
-                    na_sales = calc.converterNumero(Double.parseDouble(colunas[7]));
-                    eu_sales = calc.converterNumero(Double.parseDouble(colunas[8]));
-                    jp_sales = calc.converterNumero(Double.parseDouble(colunas[9]));
-                    other_sales = calc.converterNumero(Double.parseDouble(colunas[10]));
-                    global_sales = calc.converterNumero(Double.parseDouble(colunas[11]));
+                    na_sales = Double.parseDouble(colunas[7]);
+                    eu_sales = Double.parseDouble(colunas[8]);
+                    jp_sales = Double.parseDouble(colunas[9]);
+                    other_sales = Double.parseDouble(colunas[10]);
+                    global_sales = Double.parseDouble(colunas[11]);
 
                 }
 
@@ -84,11 +85,11 @@ public class RegraArquivo {
             year = Integer.parseInt(colunas[5]);
             genre = colunas[6];
             publisher = colunas[7];
-            na_sales = calc.converterNumero(Double.parseDouble(colunas[8]));
-            eu_sales = calc.converterNumero(Double.parseDouble(colunas[9]));
-            jp_sales = calc.converterNumero(Double.parseDouble(colunas[10]));
-            other_sales = calc.converterNumero(Double.parseDouble(colunas[11]));
-            global_sales = calc.converterNumero(Double.parseDouble(colunas[12]));
+            na_sales = Double.parseDouble(colunas[8]);
+            eu_sales = Double.parseDouble(colunas[9]);
+            jp_sales = Double.parseDouble(colunas[10]);
+            other_sales =Double.parseDouble(colunas[11]);
+            global_sales =Double.parseDouble(colunas[12]);
 
             scanner.nextLine();
         } else if (colunas.length == 14) {
@@ -98,11 +99,11 @@ public class RegraArquivo {
             year = Integer.parseInt(colunas[6]);
             genre = colunas[7];
             publisher = colunas[8];
-            na_sales = calc.converterNumero(Double.parseDouble(colunas[9]));
-            eu_sales = calc.converterNumero(Double.parseDouble(colunas[10]));
-            jp_sales = calc.converterNumero(Double.parseDouble(colunas[11]));
-            other_sales = calc.converterNumero(Double.parseDouble(colunas[12]));
-            global_sales = calc.converterNumero(Double.parseDouble(colunas[13]));
+            na_sales = Double.parseDouble(colunas[9]);
+            eu_sales = Double.parseDouble(colunas[10]);
+            jp_sales = Double.parseDouble(colunas[11]);
+            other_sales =Double.parseDouble(colunas[12]);
+            global_sales = Double.parseDouble(colunas[13]);
             scanner.nextLine();
         }
         InformacoesDosJogos jogo = new InformacoesDosJogos(rank, name, platform, year, genre, publisher, na_sales, eu_sales, jp_sales, other_sales, global_sales);
